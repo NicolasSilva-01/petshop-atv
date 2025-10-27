@@ -1,12 +1,13 @@
 import { Router } from "express";
-import * as PetsController from './../controllers/petsController.js'
+import * as PetController from './../controllers/petsController.js'
 
 const router = Router();
 
-router.get("/", PetsController.listarTodos);
-router.get("/:id", PetsController.listarUm)
-
-
+router.get("/", PetController.listarTodos)
+router.get("/:id", PetController.listarUm)
+router.post("/", PetController.criar)
+router.delete("/:id", PetController.apagar)
+router.put("/:id", PetController.atualizar)
 
 
 export default router;
